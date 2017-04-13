@@ -1,0 +1,29 @@
+﻿<div class="row" ng-controller="EmployeeController">
+    <div class="row">
+        <a href="#employee" class="btn btn-default">Add new employee</a>
+        <br />
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Job title</th>
+                        <th>Employment Date</th>
+                        <th>Rate</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in data">
+                        <td>{{item.FirstName}} {{item.LastName}}</td>
+                        <td>{{item.JobTitle}}</td>
+                        <td>{{item.EmploymentDate | date:'dd/MM/yyyy'}}</td>
+                        <td>{{item.Rate | currency:'$'}}</td>
+                        <td><a href="#" class="" ng-confirm-click="Are you sure to delete this record ?" confirmed-click="DeleteEmployee(item.Id, $event)">Delete</a></td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

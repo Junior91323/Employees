@@ -1,0 +1,49 @@
+﻿<div class="row" ng-controller="EmployeeController">
+
+
+    <div class="">
+        <form name="CreateEmployee" class="form-horizontal ">
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="txtFirstName">First Name</label>
+                <div class="col-sm-10">
+                    <input type="text" name="FirstName" ng-model="employee.FirstName" class="form-control" required id="txtFirstName" placeholder="First Name" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="txtLastName">Last Name</label>
+                <div class="col-sm-10">
+                    <input type="text" name="LastName" ng-model="employee.LastName" class="form-control" required id="txtLastName" placeholder="Last Name" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="txtEmploymentDate">Employment Date</label>
+                <div class="col-sm-10">
+                    <input type="date" name="EmploymentDate" ng-model="employee.EmploymentDate" class="form-control" required id="txtEmploymentDate" placeholder="" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="txtRate">Rate</label>
+                <div class="col-sm-10">
+                    <input type="number" name="Rate" ng-model="employee.Rate" required id="txtRate" class="form-control" placeholder="Rate" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="JobId">Job title</label>
+                <div class="col-sm-10">
+                    <select name="JobId" ng-model="employee.JobId" required id="txtJobId"  class="form-control" >
+                        <option ng-repeat="item in jobs" value="{{item.Id}}">{{item.Title}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-1">
+                    <a href="#employees" class="btn btn-default">Back</a>
+                </div>
+                    <div class="col-sm-10">
+                        <input type="submit" value="Save" class="btn btn-default" ng-click="AddEmployee(employee,CreateEmployee)" />
+                    </div>
+                </div>
+        </form>
+    </div>
+
+</div>
